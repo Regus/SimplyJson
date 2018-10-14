@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimplyJson", "SimplyJson\Si
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplyJson.Dev", "SimplyJson.Dev\SimplyJson.Dev.csproj", "{03082313-916D-4D4A-BC43-5E8BB9C58634}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplyJson.WebApi", "SimplyJson.WebApi\SimplyJson.WebApi.csproj", "{259F4C61-D302-4FAF-A842-6ECD7F4A917D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{03082313-916D-4D4A-BC43-5E8BB9C58634}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03082313-916D-4D4A-BC43-5E8BB9C58634}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03082313-916D-4D4A-BC43-5E8BB9C58634}.Release|Any CPU.Build.0 = Release|Any CPU
+		{259F4C61-D302-4FAF-A842-6ECD7F4A917D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{259F4C61-D302-4FAF-A842-6ECD7F4A917D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{259F4C61-D302-4FAF-A842-6ECD7F4A917D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{259F4C61-D302-4FAF-A842-6ECD7F4A917D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

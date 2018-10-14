@@ -12,7 +12,7 @@
 		<Copyright>Anders Eggers-Krag</Copyright>
 		<PackageLicenseUrl>https://github.com/Regus/SimplyJson/blob/master/LICENSE</PackageLicenseUrl>
 		<PackageTags>json</PackageTags>
-	</PropertyGroup>
+  </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
     <DocumentationFile></DocumentationFile>

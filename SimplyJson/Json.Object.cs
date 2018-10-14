@@ -107,10 +107,10 @@ namespace SimplyJson {
 				throw new JsonException($"{Type} is not an Object");
 			}
 			var item = _obj[name];
-			if (item.Type != JsonType.String) {
+			if (item.Type == JsonType.String) {
 				return item._string;
 			}
-			if (item.Type != JsonType.Simple) {
+			if (item.Type == JsonType.Simple) {
 				return item._simple;
 			}
 			else {
@@ -131,10 +131,10 @@ namespace SimplyJson {
 				throw new JsonException($"{Type} is not an Object");
 			}
 			var item = _obj[name];
-			if (item.Type != JsonType.String) {
+			if (item.Type == JsonType.String) {
 				return bool.Parse(item._string);
 			}
-			if (item.Type != JsonType.Simple) {
+			if (item.Type == JsonType.Simple) {
 				return item._simple == "true";
 			}
 			else {
@@ -155,10 +155,10 @@ namespace SimplyJson {
 				throw new JsonException($"{Type} is not an Object");
 			}
 			var item = _obj[name];
-			if (item.Type != JsonType.String) {
+			if (item.Type == JsonType.String) {
 				return sbyte.Parse(item._string);
 			}
-			if (item.Type != JsonType.Simple) {
+			if (item.Type == JsonType.Simple) {
 				return sbyte.Parse(item._simple);
 			}
 			else {
@@ -179,10 +179,10 @@ namespace SimplyJson {
 				throw new JsonException($"{Type} is not an Object");
 			}
 			var item = _obj[name];
-			if (item.Type != JsonType.String) {
+			if (item.Type == JsonType.String) {
 				return byte.Parse(item._string);
 			}
-			if (item.Type != JsonType.Simple) {
+			if (item.Type == JsonType.Simple) {
 				return byte.Parse(item._simple);
 			}
 			else {
@@ -198,15 +198,39 @@ namespace SimplyJson {
 			return this;
 		}
 
+		public char Char(string name) {
+			if (_obj == null) {
+				throw new JsonException($"{Type} is not an Object");
+			}
+			var item = _obj[name];
+			if (item.Type == JsonType.String) {
+				return item._string[0];
+			}
+			if (item.Type == JsonType.Simple) {
+				return char.Parse(item._simple);
+			}
+			else {
+				throw new JsonException($"Cannot convert {name} ({item.Type}) to a Char");
+			}
+		}
+
+		public Json Char(string name, char item) {
+			if (_obj == null) {
+				throw new JsonException($"{Type} is not an Object");
+			}
+			_obj[name] = CreateSimple(item.ToString());
+			return this;
+		}
+
 		public short Int16(string name) {
 			if (_obj == null) {
 				throw new JsonException($"{Type} is not an Object");
 			}
 			var item = _obj[name];
-			if (item.Type != JsonType.String) {
+			if (item.Type == JsonType.String) {
 				return short.Parse(item._string);
 			}
-			if (item.Type != JsonType.Simple) {
+			if (item.Type == JsonType.Simple) {
 				return short.Parse(item._simple);
 			}
 			else {
@@ -227,10 +251,10 @@ namespace SimplyJson {
 				throw new JsonException($"{Type} is not an Object");
 			}
 			var item = _obj[name];
-			if (item.Type != JsonType.String) {
+			if (item.Type == JsonType.String) {
 				return ushort.Parse(item._string);
 			}
-			if (item.Type != JsonType.Simple) {
+			if (item.Type == JsonType.Simple) {
 				return ushort.Parse(item._simple);
 			}
 			else {
@@ -251,10 +275,10 @@ namespace SimplyJson {
 				throw new JsonException($"{Type} is not an Object");
 			}
 			var item = _obj[name];
-			if (item.Type != JsonType.String) {
+			if (item.Type == JsonType.String) {
 				return int.Parse(item._string);
 			}
-			if (item.Type != JsonType.Simple) {
+			if (item.Type == JsonType.Simple) {
 				return int.Parse(item._simple);
 			}
 			else {
@@ -275,10 +299,10 @@ namespace SimplyJson {
 				throw new JsonException($"{Type} is not an Object");
 			}
 			var item = _obj[name];
-			if (item.Type != JsonType.String) {
+			if (item.Type == JsonType.String) {
 				return uint.Parse(item._string);
 			}
-			if (item.Type != JsonType.Simple) {
+			if (item.Type == JsonType.Simple) {
 				return uint.Parse(item._simple);
 			}
 			else {
@@ -299,10 +323,10 @@ namespace SimplyJson {
 				throw new JsonException($"{Type} is not an Object");
 			}
 			var item = _obj[name];
-			if (item.Type != JsonType.String) {
+			if (item.Type == JsonType.String) {
 				return long.Parse(item._string);
 			}
-			if (item.Type != JsonType.Simple) {
+			if (item.Type == JsonType.Simple) {
 				return long.Parse(item._simple);
 			}
 			else {
@@ -328,10 +352,10 @@ namespace SimplyJson {
 				throw new JsonException($"{Type} is not an Object");
 			}
 			var item = _obj[name];
-			if (item.Type != JsonType.String) {
+			if (item.Type == JsonType.String) {
 				return ulong.Parse(item._string);
 			}
-			if (item.Type != JsonType.Simple) {
+			if (item.Type == JsonType.Simple) {
 				return ulong.Parse(item._simple);
 			}
 			else {
@@ -357,10 +381,10 @@ namespace SimplyJson {
 				throw new JsonException($"{Type} is not an Object");
 			}
 			var item = _obj[name];
-			if (item.Type != JsonType.String) {
+			if (item.Type == JsonType.String) {
 				return float.Parse(item._string, enUS);
 			}
-			if (item.Type != JsonType.Simple) {
+			if (item.Type == JsonType.Simple) {
 				return float.Parse(item._simple, enUS);
 			}
 			else {
@@ -381,10 +405,10 @@ namespace SimplyJson {
 				throw new JsonException($"{Type} is not an Object");
 			}
 			var item = _obj[name];
-			if (item.Type != JsonType.String) {
+			if (item.Type == JsonType.String) {
 				return double.Parse(item._string, enUS);
 			}
-			if (item.Type != JsonType.Simple) {
+			if (item.Type == JsonType.Simple) {
 				return double.Parse(item._simple, enUS);
 			}
 			else {
@@ -405,10 +429,10 @@ namespace SimplyJson {
 				throw new JsonException($"{Type} is not an Object");
 			}
 			var item = _obj[name];
-			if (item.Type != JsonType.String) {
+			if (item.Type == JsonType.String) {
 				return decimal.Parse(item._string, enUS);
 			}
-			if (item.Type != JsonType.Simple) {
+			if (item.Type == JsonType.Simple) {
 				return decimal.Parse(item._simple, enUS);
 			}
 			else {

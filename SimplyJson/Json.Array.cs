@@ -24,6 +24,14 @@ namespace SimplyJson {
 			return this;
 		}
 
+		public Json Add(bool item) {
+			if (_array == null) {
+				throw new JsonException($"{Type} is not an Array");
+			}
+			_array.Add(CreateSimple(item ? "true" : "false"));
+			return this;
+		}
+
 		public Json Add(sbyte item) {
 			if (_array == null) {
 				throw new JsonException($"{Type} is not an Array");
@@ -352,10 +360,10 @@ namespace SimplyJson {
 				throw new JsonException($"{Type} is not an Array");
 			}
 			var item = _array[index];
-			if (item.Type != JsonType.String) {
+			if (item.Type == JsonType.String) {
 				return item._string;
 			}
-			if (item.Type != JsonType.Simple) {
+			if (item.Type == JsonType.Simple) {
 				return item._simple;
 			}
 			else {
@@ -376,10 +384,10 @@ namespace SimplyJson {
 				throw new JsonException($"{Type} is not an Array");
 			}
 			var item = _array[index];
-			if (item.Type != JsonType.String) {
+			if (item.Type == JsonType.String) {
 				return bool.Parse(item._string);
 			}
-			if (item.Type != JsonType.Simple) {
+			if (item.Type == JsonType.Simple) {
 				return item._simple == "true";
 			}
 			else {
@@ -400,10 +408,10 @@ namespace SimplyJson {
 				throw new JsonException($"{Type} is not an Array");
 			}
 			var item = _array[index];
-			if (item.Type != JsonType.String) {
+			if (item.Type == JsonType.String) {
 				return sbyte.Parse(item._string);
 			}
-			if (item.Type != JsonType.Simple) {
+			if (item.Type == JsonType.Simple) {
 				return sbyte.Parse(item._simple);
 			}
 			else {
@@ -424,10 +432,10 @@ namespace SimplyJson {
 				throw new JsonException($"{Type} is not an Array");
 			}
 			var item = _array[index];
-			if (item.Type != JsonType.String) {
+			if (item.Type == JsonType.String) {
 				return byte.Parse(item._string);
 			}
-			if (item.Type != JsonType.Simple) {
+			if (item.Type == JsonType.Simple) {
 				return byte.Parse(item._simple);
 			}
 			else {
@@ -449,10 +457,10 @@ namespace SimplyJson {
 				throw new JsonException($"{Type} is not an Array");
 			}
 			var item = _array[index];
-			if (item.Type != JsonType.String) {
+			if (item.Type == JsonType.String) {
 				return short.Parse(item._string);
 			}
-			if (item.Type != JsonType.Simple) {
+			if (item.Type == JsonType.Simple) {
 				return short.Parse(item._simple);
 			}
 			else {
@@ -473,10 +481,10 @@ namespace SimplyJson {
 				throw new JsonException($"{Type} is not an Array");
 			}
 			var item = _array[index];
-			if (item.Type != JsonType.String) {
+			if (item.Type == JsonType.String) {
 				return ushort.Parse(item._string);
 			}
-			if (item.Type != JsonType.Simple) {
+			if (item.Type == JsonType.Simple) {
 				return ushort.Parse(item._simple);
 			}
 			else {
@@ -497,10 +505,10 @@ namespace SimplyJson {
 				throw new JsonException($"{Type} is not an Array");
 			}
 			var item = _array[index];
-			if (item.Type != JsonType.String) {
+			if (item.Type == JsonType.String) {
 				return int.Parse(item._string);
 			}
-			if (item.Type != JsonType.Simple) {
+			if (item.Type == JsonType.Simple) {
 				return int.Parse(item._simple);
 			}
 			else {
@@ -521,10 +529,10 @@ namespace SimplyJson {
 				throw new JsonException($"{Type} is not an Array");
 			}
 			var item = _array[index];
-			if (item.Type != JsonType.String) {
+			if (item.Type == JsonType.String) {
 				return uint.Parse(item._string);
 			}
-			if (item.Type != JsonType.Simple) {
+			if (item.Type == JsonType.Simple) {
 				return uint.Parse(item._simple);
 			}
 			else {
@@ -545,10 +553,10 @@ namespace SimplyJson {
 				throw new JsonException($"{Type} is not an Array");
 			}
 			var item = _array[index];
-			if (item.Type != JsonType.String) {
+			if (item.Type == JsonType.String) {
 				return long.Parse(item._string);
 			}
-			if (item.Type != JsonType.Simple) {
+			if (item.Type == JsonType.Simple) {
 				return long.Parse(item._simple);
 			}
 			else {
@@ -574,10 +582,10 @@ namespace SimplyJson {
 				throw new JsonException($"{Type} is not an Array");
 			}
 			var item = _array[index];
-			if (item.Type != JsonType.String) {
+			if (item.Type == JsonType.String) {
 				return ulong.Parse(item._string);
 			}
-			if (item.Type != JsonType.Simple) {
+			if (item.Type == JsonType.Simple) {
 				return ulong.Parse(item._simple);
 			}
 			else {
@@ -603,10 +611,10 @@ namespace SimplyJson {
 				throw new JsonException($"{Type} is not an Array");
 			}
 			var item = _array[index];
-			if (item.Type != JsonType.String) {
+			if (item.Type == JsonType.String) {
 				return ulong.Parse(item._string, enUS);
 			}
-			if (item.Type != JsonType.Simple) {
+			if (item.Type == JsonType.Simple) {
 				return ulong.Parse(item._simple, enUS);
 			}
 			else {
@@ -627,10 +635,10 @@ namespace SimplyJson {
 				throw new JsonException($"{Type} is not an Array");
 			}
 			var item = _array[index];
-			if (item.Type != JsonType.String) {
+			if (item.Type == JsonType.String) {
 				return double.Parse(item._string, enUS);
 			}
-			if (item.Type != JsonType.Simple) {
+			if (item.Type == JsonType.Simple) {
 				return double.Parse(item._simple, enUS);
 			}
 			else {
@@ -651,10 +659,10 @@ namespace SimplyJson {
 				throw new JsonException($"{Type} is not an Array");
 			}
 			var item = _array[index];
-			if (item.Type != JsonType.String) {
+			if (item.Type == JsonType.String) {
 				return decimal.Parse(item._string, enUS);
 			}
-			if (item.Type != JsonType.Simple) {
+			if (item.Type == JsonType.Simple) {
 				return decimal.Parse(item._simple, enUS);
 			}
 			else {
@@ -681,7 +689,7 @@ namespace SimplyJson {
 				throw new JsonException($"{Type} is not an Array");
 			}
 			var item = _array[index];
-			if (item.Type != JsonType.String) {
+			if (item.Type == JsonType.String) {
 				return System.DateTime.Parse(item._string, null, DateTimeStyles.AdjustToUniversal);
 			}
 			else {
@@ -695,6 +703,18 @@ namespace SimplyJson {
 			}
 			_array[index] = CreateString(item.ToString("yyyy-MM-ddTHH:mm:ss.fffZ"));
 			return this;
+		}
+
+		public int Count {
+			get {
+				if (_obj != null) {
+					return _obj.Count;
+				}
+				if (_array != null) {
+					return _array.Count;
+				}
+				throw new JsonException($"Count is not valid for {Type} (only valid for Object and Array)");
+			}
 		}
 	}
 }

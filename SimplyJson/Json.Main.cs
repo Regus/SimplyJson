@@ -27,11 +27,11 @@ namespace SimplyJson {
 			return new Json { _simple = simple };
 		}
 
-		private static Json CreateObject() {
+		public static Json CreateObject() {
 			return new Json { _obj = new Dictionary<string, Json>() };
 		}
 
-		private static Json CreateArray() {
+		public static Json CreateArray() {
 			return new Json { _array = new List<Json>() };
 		}
 

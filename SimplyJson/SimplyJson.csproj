@@ -8,7 +8,11 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<RepositoryUrl>https://github.com/Regus/SimplyJson</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<Version>1.0.1</Version>
+		<Version>1.0.2</Version>
+		<PackageProjectUrl>https://github.com/Regus/SimplyJson</PackageProjectUrl>
+		<Copyright>Anders Eggers-Krag</Copyright>
+		<PackageLicenseUrl>https://github.com/Regus/SimplyJson/blob/master/LICENSE</PackageLicenseUrl>
+		<PackageTags>json</PackageTags>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">

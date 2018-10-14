@@ -71,7 +71,7 @@ namespace SimplyJson {
 			return (T)Deserialize(typeof(T));
 		}
 
-		private object Deserialize(Type type) {
+		public object Deserialize(Type type) {
 			Object obj = type.GetConstructor(new Type[0]).Invoke(null);
 			if (typeof(IDictionary).IsAssignableFrom(type)) {
 				foreach (string key in Keys) {

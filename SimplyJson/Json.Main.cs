@@ -44,5 +44,9 @@ namespace SimplyJson {
 			}
 		}
 
+		public override string ToString() {
+			return ToString(false);
+		}
+
 	}
 }
